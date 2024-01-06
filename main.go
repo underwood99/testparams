@@ -27,5 +27,6 @@ func main() {
 	}
 
 	data1, err := io.ReadAll(file)
+
 	digcloudlog.DCL_Info(data1)
 }
