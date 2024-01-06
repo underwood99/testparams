@@ -22,9 +22,9 @@ func main() {
 	}
 	digcloudlog.DCL_Info(serverAddress)
 	// read config file
-	file, err := os.Open("file.txt")
+	file, err := os.Open("/file.txt")
 	if err != nil {
-		digcloudlog.DCL_Error("didnt file the file")
+		digcloudlog.DCL_Error("didnt find the file")
 	}
 
 	data1, err := io.ReadAll(file)
