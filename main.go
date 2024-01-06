@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
-	digcloudlog "github.com/digautos-library/digCloudLogGo"
+	"io"
 	"os"
+
+	digcloudlog "github.com/digautos-library/digCloudLogGo"
 )
 
 func main() {
@@ -19,4 +21,11 @@ func main() {
 		serverAddress = "no params"
 	}
 	digcloudlog.DCL_Info(serverAddress)
+	file, err := os.Open("file.txt")
+	if err != nil {
+		digcloudlog.DCL_Error("didnt file the file")
+	}
+
+	data1, err := io.ReadAll(file)
+	digcloudlog.DCL_Info(data1)
 }
