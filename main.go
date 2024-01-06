@@ -29,6 +29,10 @@ func main() {
 
 	data1, err := io.ReadAll(file)
 	digcloudlog.DCL_Info(data1)
-	running()
+	//running()
 
+	err = httpStart()
+	if err != nil {
+		digcloudlog.DCL_Error("http start error: " + err.Error())
+	}
 }
